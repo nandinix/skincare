@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skincare</title>
+    <link rel="stylesheet" href="medium.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="jquery-3.7.0.min.js"></script> 
+  </head>
+  <body>
+    <script>
+      if (localStorage.getItem("price") === "low" || localStorage.getItem("price") === "medium" || localStorage.getItem("price") === "high")
+      {
+        var moisturizer = "Vanicream Daily Facial Moisturizer";
+        var moisturizerlink = "https://www.vanicream.com/product/vanicream-daily-facial-moisturizer";
+        if (localStorage.getItem("oiliness") === "oily" || localStorage.getItem("oiliness") === "combo")
+        {
+          var cleanser = "Cerave Foaming Facial Cleanser";
+          var cleanserlink = "https://www.cerave.com/skincare/cleansers/foaming-facial-cleanser";
+        }
+        else
+        {
+          var cleanser = "Cetaphil Gentle Skin Cleanser";
+          var cleanserlink = "https://www.cetaphil.com/us/cleansers/gentle-skin-cleanser/302990110227.html";
+        }
+        if (localStorage.getItem("concern") === "acne")
+        {
+          if (localStorage.getItem("sensitivity") === "often")
+          {
+            var serum2 = "Cerave Acne Control Gel";
+            var serum2link = "https://www.cerave.com/skincare/acne/acne-control-gel";
+          }
+          else
+          {
+            var serum2 = "Neutrogena BP Acne Daily Mask";
+            var serum2link = "https://www.neutrogena.com/products/skincare/rapid-clear-stubborn-acne-daily-leave-on-mask/6811067.html";
+          }
+          var serum1 = "The Ordinary Azelaic Acid Suspension";
+          var serum1link= "https://theordinary.com/en-us/azelaic-acid-suspension-10-exfoliator-100407.html";
+        }
+        else if (localStorage.getItem("concern") === "hyper")
+        {
+          var serum2 = "The Ordinary Ascorbic Acid + Alpha Arbutrin";
+          var serum2link = "https://theordinary.com/en-us/ascorbic-acid-8-alpha-arbutin-2-vitamin-c-100404.html";
+          var serum1 = "The Ordinary Mandelic Acid 10% + HA";
+          var serum1link = "https://theordinary.com/en-us/mandelic-acid-10-ha-exfoliator-100429.html";
+        }
+        else if (localStorage.getItem("concern") === "rosacea")
+        {
+          var serum2 = "The Ordinary Azelaic Acid Suspension";
+          var serum2link= "https://theordinary.com/en-us/azelaic-acid-suspension-10-exfoliator-100407.html";
+          var serum1 = "The Ordinary Niacinimide 10%";
+          var serum1link = "https://theordinary.com/en-us/niacinamide-10-zinc-1-serum-100436.html";
+        }
+        else if (localStorage.getItem("concern") === "wrinkle")
+        {
+          var serum2 = "The Ordinary Retinol 1%";
+          var serum2link = "https://theordinary.com/en-us/retinol-1-in-squalane-serum-100441.html";
+          var serum1 = "The Ordinary Mandelic Acid 10% + HA";
+          var serum1link = "https://theordinary.com/en-us/niacinamide-10-zinc-1-serum-100436.html";
+        }
+        if (localStorage.getItem("skintone") === "fair")
+        {
+          var sunscreen = "Cerave Mineral Sunscreen SPF 50";
+          var sunscreenlink = "https://www.cerave.com/sunscreen/face/hydrating-mineral-sunscreen-face-lotion-spf-50";
+        }
+        else
+        {
+          var sunscreen = "Neutrogena Age Shield Sunscreen SPF 70";
+          var sunscreenlink = "https://www.neutrogena.com/products/sun/age-shield-face-oil-free-oxybenzone-free-sunscreen-broad-spectrum-spf-70/6887270.html?cgid=sunscreen-for-face&tilePosition=3";
+        }
+      }
+    </script>
+    <div class="homescreen">
+      <p class="title">
+        Based on your information...
+      </p>
+      <p class="intro">
+        Here's your medium skincare routine!
+      </p>
+      <p class="heading">
+        After you wake up, in the morning:
+      </p>
+      <div class="routine">
+        <div class="step">
+          <p><strong>Step 1:</strong></p>
+          <img class="icons" src="../icons/facewash.png">
+          <p>Cleanser</p>
+          <div class="info">
+            <p>
+              A facial cleanser will clean and refresh your skin, removing any dirt or oils and providing a clean slate for products.
+            </p>
+            <p>Here's our recommendation based on your information:</p>
+            <script>
+              document.write('<a href="' + cleanserlink + '"' +'target="_blank"'+ '>' + cleanser + '</a>');
+            </script>
+          </div>
+        </div>
+        <div class="step">
+            <p><strong>Step 2:</strong></p>
+            <img class="icons" src="../icons/serum.png">
+            <p>Serum/topical</p>
+            <div class="info">
+              <p>
+                A serum or topical is an additional step that utilizes active ingredients to target specific skin concerns.
+              </p>
+              <p>Here's our recommendation based on your information:</p>
+              <script>
+                document.write('<a href="' + serum1link + '"' +'target="_blank"'+ '>' + serum1 + '</a>');
+              </script>
+            </div>
+          </div>
+        <div class="step">
+          <p><strong>Step 3:</strong></p>
+          <img class="icons" src="../icons/moisturizer.png">
+          <p>Moisturizer</p>
+          <div class="info">
+            <p>
+            A coat of moisturizer hydrates and seals in moisture, while protecting from environmental irritants.
+            </p>
+            <p>Here's our recommendation based on your information:</p>
+            <script>
+              document.write('<a href="' + moisturizerlink + '"' +'target="_blank"'+ '>' + moisturizer + '</a>');
+            </script>
+          </div>
+        </div>
+        <div class="step">
+          <p><strong>Step 4:</strong></p>
+          <img class="icons" src="../icons/sunscreen.png">
+          <p>Sunscreen</p>
+          <div class="info">
+            <p>
+            Sunscreen protects the skin against UV radiation, which also prevents aging and promotes healthier skin.
+            </p>
+            <p>Here's our recommendation based on your information:</p>
+            <script>
+              document.write('<a href="' + sunscreenlink + '"' +'target="_blank"'+ '>' + sunscreen + '</a>');
+            </script>
+          </div>
+        </div>
+      </div>
+      <p class="heading">
+        Before you sleep, night-time:
+      </p>
+      <div class="routine bottom">
+        <div class="step">
+          <p><strong>Step 1:</strong></p>
+          <img class="icons" src="../icons/facewash.png">
+          <p>Cleanser</p>
+          <div class="info">
+            <p>
+              A facial cleanser will clean and refresh your skin, removing any dirt or oils and providing a clean slate for products.
+            </p>
+            <p>Here's our recommendation based on your information:</p>
+            <script>
+              document.write('<a href="' + cleanserlink + '"' +'target="_blank"'+ '>' + cleanser + '</a>');
+            </script>
+          </div>
+        </div>
+        <div class="step">
+          <p><strong>Step 2:</strong></p>
+          <img class="icons" src="../icons/serum.png">
+          <p>Serum/topical</p>
+          <div class="info">
+            <p>
+            A serum or topical is an additional step that utilizes active ingredients to target specific skin concerns.
+            </p>
+            <p>Here's our recommendation based on your information:</p>
+            <script>
+              document.write('<a href="' + serum2link + '"' +'target="_blank"'+ '>' + serum2 + '</a>');
+            </script>
+          </div>
+        </div>
+        <div class="step">
+          <p><strong>Step 3:</strong></p>
+          <img class="icons" src="../icons/moisturizer.png">
+          <p>Moisturizer</p>
+          <div class="info">
+            <p>
+            A coat of moisturizer hydrates and seals in moisture, while protecting from environmental irritants.
+            </p>
+            <p>Here's our recommendation based on your information:</p>
+            <script>
+              document.write('<a href="' + moisturizerlink + '"' +'target="_blank"'+ '>' + moisturizer + '</a>');
+            </script>
+          </div>
+        </div>
+        <p class="ending">
+            Disclaimer: This website was not made by a medical professional and this skincare routine cannot guarantee you perfect skin. However, it's a good start!
+          </p>
+      </p>
+    </div>
+    <div class="bedder">
+      <p class="about">
+        About this website
+      </p>
+    </div>
+    <div class="hamburger-menu">
+      <img class="hamburger" src="../icons/hamburger.png">
+    </div>
+  </body>
+</html>
