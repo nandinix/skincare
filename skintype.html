@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skincare</title>
+    <link rel="stylesheet" href="skintype.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="jquery-3.7.0.min.js"></script> 
+  </head>
+  <body>
+    <script>
+      var oiliness = 'undefined';
+      var sensitivity = 'undefined';
+      var skintone = 'undefined';
+
+      function selectChoice(id,section) {
+        var element = document.getElementById(id);
+        if (element.classList.contains('choiceSelected'))
+        {
+          if (section === 1)
+          {
+            oiliness = 'undefined';
+          }
+          else if (section === 2)
+          {
+            sensitivity = 'undefined';
+          }
+          else if (section === 3)
+          {
+            skintone = 'undefined';
+          }
+        }
+        element.classList.toggle('choiceSelected');
+        if (section === 1) {
+          var list = document.getElementsByClassName("choice1");
+        } else if (section === 2) {
+          var list = document.getElementsByClassName("choice2");
+        } else if (section === 3) {
+          var list = document.getElementsByClassName("choice3");
+        }
+        for (var i = list.length - 1; i >= 0; i--)
+        {
+          if (list[i] != document.getElementById(id))
+          {
+            list[i].classList.remove('choiceSelected');
+          }
+        }
+      }
+    </script>
+    <div class="homescreen">
+      <p class="title">
+        Skin Type
+      </p>
+      <p class="intro">
+        First, provide some information about your unique skin type.
+      </p>
+      <div class="questions">
+        <div class="question1">
+            <p>
+                How would you describe your skin <strong>type</strong>?
+            </p>
+            <div class="choices1">
+                <div class="choice1" id="choice1a"onclick=
+                "oiliness='dry';
+                selectChoice('choice1a', 1);"> 
+                    <img class="icons" src="icons/cactus.png">
+                    <p>Dry</p>
+                </div>
+                <div class="choice1" id="choice1b" onclick=
+                "oiliness='normal'; 
+                selectChoice('choice1b', 1);">
+                    <img class="icons" src="icons/balance.png">
+                    <p>Normal</p>
+                </div>
+                <div class="choice1" id="choice1c" onclick=
+                "oiliness='oily'; 
+                selectChoice('choice1c', 1);">
+                    <img class="icons" src="icons/oily.png">
+                    <p>Oily</p>
+                </div>
+                <div class="choice1" id="choice1d" onclick=
+                "oiliness='combo';
+                selectChoice('choice1d', 1);;">
+                    <img class="icons" src="icons/combo.png">
+                    <p>Combo</p>
+                </div>
+            </div>
+        </div>
+        <div class="question2">
+            <p>
+                How often is your skin <strong>sensitive</strong>?
+            </p>
+            <div class="choices2">
+                <div class="choice2" id="choice2a" onclick=
+                "sensitivity='never';
+                selectChoice('choice2a', 2);"> 
+                    <img class="icons" src="icons/never.png">
+                    <p>Never</p>
+                </div>
+                <div class="choice2" id="choice2b" onclick=
+                "sensitivity='sometimes';
+                selectChoice('choice2b', 2);">
+                    <img class="icons" src="icons/sometimes.png">
+                    <p>Medium</p>
+                </div>
+                <div class="choice2" id="choice2c" onclick=
+                "sensitivity='often';
+                selectChoice('choice2c', 2);">
+                    <img class="icons" src="icons/often.png">
+                    <p>Often</p>
+                </div>
+            </div>
+        </div>
+        <div class="question3">
+            <p>
+                Which color best represents your skin <strong>tone</strong>?
+            </p>
+            <div class="choices3">
+                <div class="choice3" id="choice3a" onclick=
+                "skintone='fair';
+                selectChoice('choice3a', 3);"> 
+                    <img class="icons" src="icons/fair.png">
+                    <p>Fair</p>
+                </div>
+                <div class="choice3" id="choice3b" onclick=
+                "skintone='medium';
+                selectChoice('choice3b', 3);">
+                    <img class="icons" src="icons/medium.png">
+                    <p>Medium</p>
+                </div>
+                <div class="choice3" id="choice3c" onclick=
+                "skintone='deep';
+                selectChoice('choice3c', 3);">
+                    <img class="icons" src="icons/deep.png">
+                    <p>Deep</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <button class="navbut" onclick="location.href='startquiz.html'">
+          < Back
+        </button>
+        <img class="progress" src="icons/progress1.png">
+        <button class="navbut" onclick=
+        "localStorage.setItem('oiliness',oiliness);
+          localStorage.setItem('sensitivity',sensitivity);
+          localStorage.setItem('skintone',skintone);
+          if ((oiliness != 'undefined') && (sensitivity != 'undefined') && (skintone != 'undefined'))
+          {
+            location.href='skinconcerns.html';
+          }">
+          Next >
+        </button>
+      </div>
+    </div>
+    <div class="bedder">
+      <p class="about">
+        About this website
+      </p>
+    </div>
+    <div class="hamburger-menu">
+      <img class="hamburger" src="icons/hamburger.png">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skincare</title>
+    <link rel="stylesheet" href="skinconcerns.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="jquery-3.7.0.min.js"></script> 
+  </head>
+  <body>
+    <script>
+      var concern = 'undefined';
+      var goals = [0, 0, 0, 0, 0, 0];
+      function selectChoice(id) {
+        var element = document.getElementById(id);
+        if (element.classList.contains('choiceSelected'))
+        {
+          concern = 'undefined';
+        }
+        element.classList.toggle('choiceSelected');
+        var list = document.getElementsByClassName("choice");
+        for (var i = list.length - 1; i >= 0; i--)
+        {
+          if (list[i] != document.getElementById(id))
+          {
+            list[i].classList.remove('choiceSelected');
+          }
+        }
+      }
+      function checkChoice(choice)
+      {
+        if (goals[choice] === 0)
+        {
+          goals[choice] = 1;
+        }
+        else {
+          goals[choice] = 0;
+        }
+      }
+      function goalValidity()
+      {
+        var goalcount = 0;
+        for (var i = 0; i < 6; i++)
+        {
+          if (goals[i] === 1)
+          {
+            goalcount++;
+          }
+        }
+        return goalcount;
+      }
+    </script>
+    <div class="homescreen">
+      <p class="title">
+        Skin Concerns
+      </p>
+      <p class="intro">
+        Next, think about some of your main skin concerns that you'd like to fix.
+      </p>
+      <div class="questions">
+        <div class="question1">
+            <p>
+                Select your <strong>main</strong> skin concern:
+            </p>
+            <div class="choices1">
+                <div class="choice" id="choice1a" onclick=
+                "concern='acne';
+                selectChoice('choice1a');"> 
+                    <img class="icons" src="icons/acne.png">
+                    <p>Active acne</p>
+                </div>
+                <div class="choice" id="choice1b" onclick=
+                "concern='hyper';
+                selectChoice('choice1b');">
+                    <img class="icons" src="icons/hyper.png">
+                    <p>Hyperpigmentation</p>
+                </div>
+                <div class="choice" id="choice1c" onclick=
+                "concern='rosacea';
+                selectChoice('choice1c');">
+                    <img class="icons" src="icons/rosacea.png">
+                    <p>Rosacea</p>
+                </div>
+                <div class="choice" id="choice1d" onclick=
+                "concern='wrinkle';
+                selectChoice('choice1d');">
+                    <img class="icons" src="icons/wrinkle.png">
+                    <p>Fine lines/wrinkles</p>
+                </div>
+            </div>
+        </div>
+        <div class="question2">
+            <p>
+                Optionally, select additional skin goals (up to 2):
+            </p>
+            <div class="choices2">
+                <label class="choice2" id="choice2a" onchange="
+                checkChoice(0);">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Extra hydration
+                </label>
+                <label class="choice2" id="choice2b" onchange="
+                checkChoice(1);">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Firmness
+                </label>
+                <label class="choice2" id="choice2c" onchange="
+                checkChoice(2);">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Repair skin barrier
+                </label>
+                <label class="choice2" id="choice2d" onchange="
+                checkChoice(3);">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Reduce shine
+                </label>
+                <label class="choice2" id="choice2e" onchange="
+                checkChoice(4);">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Brighten
+                </label>
+                <label class="choice2" id="choice2f" onchange="
+                checkChoice(5);">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Minimize pores
+                </label>
+            </div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <button class="navbut" onclick="location.href='skintype.html'">
+          < Back
+        </button>
+        <img class="progress" src="icons/progress2.png">
+        <button class="navbut" onclick=
+        "localStorage.setItem('concern',concern);
+          localStorage.setItem('goals',goals);
+          if ((concern != 'undefined') && (goalValidity() <= 2))
+          {
+            location.href='preferences.html';
+          }">
+          Next >
+        </button>
+      </div>
+    </div>
+    <div class="bedder">
+      <p class="about">
+        About this website
+      </p>
+    </div>
+    <div class="hamburger-menu">
+      <img class="hamburger" src="icons/hamburger.png">
+    </div>
+  </body>
+</html>

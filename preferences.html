@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skincare</title>
+    <link rel="stylesheet" href="routinepreferences.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="jquery-3.7.0.min.js"></script> 
+  </head>
+  <body>
+    <script>
+      var complexity = 'undefined';
+      var price = 'undefined';
+    </script>
+    <div class="homescreen">
+      <p class="title">
+        Routine Preferences
+      </p>
+      <p class="intro">
+        Finally, list your preferences regarding the price and complexity of your skincare regimen.
+      </p>
+      <div class="questions">
+        <div class="question1">
+            <p>
+                How long/complex are you okay with your skincare routine being?
+            </p>
+            <div class="choices">
+                <label class="choice1">
+                    <input type="radio" name="options1" onclick="complexity='basic';">
+                    <span class="checkmark1"></span>
+                    I want just the basics to reach my goals
+                </label>
+                <label class="choice1">
+                    <input type="radio" name="options1" onclick="complexity='medium';">
+                    <span class="checkmark1"></span>
+                    I'm okay with some extra spice to better achieve my goals
+                </label>
+                <label class="choice1">
+                    <input type="radio" name="options1" onclick="complexity='complex';">
+                    <span class="checkmark1"></span>
+                    I want to do the absolute most to reach my goals
+                </label>
+            </div>
+        </div>
+        <div class="question2">
+            <p>
+                What's your budget for your new skincare routine?
+            </p>
+            <div class="choices">
+                <label class="choice2">
+                    <input type="radio" name="options2" onclick="price='low';">
+                    <span class="checkmark2"></span>
+                    The cheapest ($5-15 per product)
+                </label>
+                <label class="choice2">
+                    <input type="radio" name="options2" onclick="price='medium';">
+                    <span class="checkmark2"></span>
+                    Medium range ($15-30 per product)
+                </label>
+                <label class="choice2">
+                    <input type="radio" name="options2" onclick="price='high';">
+                    <span class="checkmark2"></span>
+                    No budget ($30+ per product)
+                </label>
+            </div>
+        </div>
+      <div class="bottom-bar">
+        <button class="navbut" onclick="location.href='skinconcerns.html'">
+          < Back
+        </button>
+        <img class="progress" src="icons/progress3.png">
+        <button class="navbut" onclick=
+        "localStorage.setItem('complexity',complexity);
+          localStorage.setItem('price',price);
+          if ((complexity != 'undefined') && (price != 'undefined'))
+          {
+            if (localStorage.getItem('complexity') === 'basic')
+            {
+              location.href = 'results/simple.html';
+            }
+            else if (localStorage.getItem('complexity') === 'medium')
+            {
+              location.href = 'results/medium.html';
+            }
+            else
+            {
+              location.href = 'results/complex.html';
+            }
+          }">
+          Submit >
+        </button>
+      </div>
+    </div>
+    <div class="bedder">
+      <p class="about">
+        About this website
+      </p>
+    </div>
+    <div class="hamburger-menu">
+      <img class="hamburger" src="icons/hamburger.png">
+    </div>
+  </body>
+</html>

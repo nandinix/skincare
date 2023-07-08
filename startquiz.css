@@ -1,0 +1,99 @@
+body {
+  background-color: #faddeb;
+}
+
+.main{
+  width: 800px;
+  margin: 0 auto;
+  padding-top: 13%;
+}
+
+.intro {
+  font-family: 'Lora', serif;
+  color: #3a2020;
+  font-size: 22px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.start {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #3a2020;
+  border-radius: 25px;
+  border-color: #3a2020;
+  background-color: #d790b3;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  padding: 13px 17px 13px 17px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: box-shadow 0.2s;
+}
+.start:hover {
+  cursor: pointer;
+  box-shadow: 10px 10px 10px rgba(0,0,0, 0.1);
+}
+.start:active {
+  background-color: #e2a9c6;;
+}
+
+
+
+.bedder {
+    height: 50px;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Lora', serif;
+    color: #3a2020;
+    font-size: 16px;
+  
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #d790b3;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #3a2020;;
+  }
+  
+  .about {
+    top: 0;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+  
+  .about:hover {
+    cursor: pointer;
+  }
+  
+  .about:active {
+    text-decoration: underline;
+  }
+  
+  .hamburger-menu {
+    height: 55px;
+  
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  
+  .hamburger {
+    height: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 14px;
+  }
