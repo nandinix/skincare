@@ -28,7 +28,7 @@
     color: #3a2020;
     font-size: 21px;
     text-align: center;
-    padding-bottom: 1%;
+    margin-top: -1%;
   }
   
   .bedder {
@@ -97,7 +97,6 @@
     color: #3a2020;
     font-size: 20px;
     text-align: center;
-    padding-bottom: 50px;
   }
 
   .question1 {
