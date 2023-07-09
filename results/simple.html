@@ -10,7 +10,7 @@
   </head>
   <body>
     <script>
-      if (localStorage.getItem("price") === "low" || localStorage.getItem("price") === "medium" || localStorage.getItem("price") === "high")
+      if (localStorage.getItem("price") === "low")
       {
         var moisturizer = "Vanicream Daily Facial Moisturizer";
         var moisturizerlink = "https://www.vanicream.com/product/vanicream-daily-facial-moisturizer";
@@ -61,6 +61,59 @@
         {
           var sunscreen = "Neutrogena Age Shield Sunscreen SPF 70";
           var sunscreenlink = "https://www.neutrogena.com/products/sun/age-shield-face-oil-free-oxybenzone-free-sunscreen-broad-spectrum-spf-70/6887270.html?cgid=sunscreen-for-face&tilePosition=3";
+        }
+      }
+      else if (localStorage.getItem("price") === "medium" || localStorage.getItem("price") === "high")
+      {
+        var moisturizer = "La Roche Posay Moisturizing Cream";
+        var moisturizerlink = "https://www.laroche-posay.us/our-products/face/face-moisturizer/toleriane-dermallergo-moisturizing-cream-3337872412486.html";
+        if (localStorage.getItem("oiliness") === "oily" || localStorage.getItem("oiliness") === "combo")
+        {
+          var cleanser = "Avene Cleansing Foam";
+          var cleanserlink = "https://www.aveneusa.com/new-cleansing-foam";
+        }
+        else
+        {
+          var cleanser = "Stratia Cleansing Milk";
+          var cleanserlink = "https://www.stratiaskin.com/products/velvet-cleansing-milk";
+        }
+        if (localStorage.getItem("concern") === "acne")
+        {
+          if (localStorage.getItem("sensitivity") === "often")
+          {
+            var serum = "Paula's Choice BHA Sensitive Skin Exfoliant";
+            var serumlink = "https://www.paulaschoice.com/calm-1pct-bha-sensitive-skin-exfoliant/921A.html";
+          }
+          else
+          {
+            var serum = "Paula's Choice 5% BP Treatment";
+            var serumlink = "https://www.paulaschoice.com/clear-extra-strength-daily-skin-clearing-treatment-with-5pct-benzoyl-peroxide/611.html";
+          }
+        }
+        else if (localStorage.getItem("concern") === "hyper")
+        {
+          var serum = "Naturium Alpha Arbutrin Serum";
+          var serumlink = "https://naturium.com/products/alpha-arbutin-serum-2";
+        }
+        else if (localStorage.getItem("concern") === "rosacea")
+        {
+          var serum = "Paula's Choice Azelaic Acid Booster";
+          var serumlink= "https://www.paulaschoice.com/10pct-azelaic-acid-booster/775.html";
+        }
+        else if (localStorage.getItem("concern") === "wrinkle")
+        {
+          var serum = "The Inkey List 1% Retinol Solution";
+          var serumlink = "https://www.theinkeylist.com/products/scar-mark-and-wrinkle-solution?currency=USD&variant=42300669853896&utm_medium=cpc&utm_source=google&utm_campaign=Google%20Shopping";
+        }
+        if (localStorage.getItem("skintone") === "fair")
+        {
+          var sunscreen = "La Roche Posay Mineral Sunscreen SPF 50";
+          var sunscreenlink = "https://www.laroche-posay.us/our-products/sun/face-sunscreen/anthelios-mineral-zinc-oxide-sunscreen-spf-50-883140000907.html";
+        }
+        else
+        {
+          var sunscreen = "Naturium Chemical Sunscreen SPF 50";
+          var sunscreenlink = "https://naturium.com/products/uv-reflect-antioxidant-spf-50?srsltid=ASuE1wTP8_WJc-37c9RjMhR6IsFDOzE_W9EibkVfchdgB0ijm9qmAMXKxg4";
         }
       }
     </script>
@@ -170,7 +223,7 @@
       </p>
     </div>
     <div class="bedder">
-      <p class="about">
+      <p class="about" onclick="location.href='../about.html'">
         About this website
       </p>
     </div>
