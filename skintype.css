@@ -26,7 +26,7 @@
   .intro {
     font-family: 'Lora', serif;
     color: #3a2020;
-    font-size: 21px;
+    font-size: 20px;
     text-align: center;
     margin-top: -1%;
   }
@@ -95,7 +95,7 @@
     flex-grow: 1;
     flex-shrink: 1;
     color: #3a2020;
-    font-size: 20px;
+    font-size: 17px;
     text-align: center;
   }
 
@@ -110,7 +110,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
   }
 
   .choices1 {
@@ -185,3 +185,4 @@
   .navbut:active {
     text-decoration: underline;
   }
+
